@@ -34,13 +34,8 @@ public class TradeServiceTest {
 
     @Test
     public void getTrades() {
-        File file = new File("C:\\Users\\ppandey\\Downloads\\trade-problem-master\\trade-problem-master\\TradeData.dat");
-        try {
-            tradeService.processFile(file);
-        } catch (IOException e) {
-            System.out.println("Exception was thrown! File Not Found or Permission to file not given");
-            e.printStackTrace();
-        }
+        File file = new File("/home/pranavankit/TradeData.dat");
+        tradeService.processFile(file);
 
         TradeRecord tradeRecord = new TradeRecord();
         tradeRecord.setBrokerCode("CB");
@@ -83,12 +78,7 @@ public class TradeServiceTest {
     @Test
     public void getTopFiveStocks() {
         File file = new File("C:\\Users\\ppandey\\Downloads\\trade-problem-master\\trade-problem-master\\TradeData.dat");;
-        try {
-            tradeService.processFile(file);
-        } catch (IOException e) {
-            System.out.println("Exception was thrown! File Not Found or Permission to file not given");
-            e.printStackTrace();
-        }
+        tradeService.processFile(file);
 
         StockDetails stockDetails = new StockDetails();
         stockDetails.setBrokerCode("IBM");

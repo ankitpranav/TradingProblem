@@ -31,12 +31,7 @@ public class TradeController {
 	/*will take csv file as an input, parses it to object and persists in  the in-memory DB*/
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public void uploadFile(@RequestPart(value = "file") MultipartFile multiPartFile) {
-		try {
-			tradeService.uploadFile(multiPartFile);
-		} catch (IOException e) {
-			System.out.println("Exception was thrown! File Not Found or Permission to file not given");
-			e.printStackTrace();
-		}
+		tradeService.uploadFile(multiPartFile);
 	}
 
 	/*will return the trades of a given broker as an input*/
